@@ -73,14 +73,13 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	if (self)
-	{
-		[self.tabBarItem setImage:[UIImage imageNamed:@"tab_settings"]];
-		self.tabBarItem.title = @"Settings";
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		[NotificationCenter addObserver:self selector:@selector(loadUser) name:NOTIFICATION_USER_LOGGED_IN];
-		[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
-	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[self.tabBarItem setImage:[UIImage imageNamed:@"tab_settings"]];
+	self.tabBarItem.title = @"Settings";
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[NotificationCenter addObserver:self selector:@selector(loadUser) name:NOTIFICATION_USER_LOGGED_IN];
+	[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return self;
 }
 

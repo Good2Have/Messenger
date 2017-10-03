@@ -40,14 +40,14 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	{
-		[self.tabBarItem setImage:[UIImage imageNamed:@"tab_people"]];
-		self.tabBarItem.title = @"People";
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CONTACTS];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_USERS];
-	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[self.tabBarItem setImage:[UIImage imageNamed:@"tab_people"]];
+	self.tabBarItem.title = @"People";
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CONTACTS];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_USERS];
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return self;
 }
 

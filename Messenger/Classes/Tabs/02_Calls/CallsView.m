@@ -32,13 +32,13 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	{
-		[self.tabBarItem setImage:[UIImage imageNamed:@"tab_calls"]];
-		self.tabBarItem.title = @"Calls";
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CALLHISTORIES];
-	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[self.tabBarItem setImage:[UIImage imageNamed:@"tab_calls"]];
+	self.tabBarItem.title = @"Calls";
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CALLHISTORIES];
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return self;
 }
 
@@ -51,7 +51,7 @@
 	self.title = @"Calls";
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Clear All" style:UIBarButtonItemStylePlain target:self
-																						   action:@selector(actionClearAll)];
+																								   action:@selector(actionClearAll)];
 	//---------------------------------------------------------------------------------------------------------------------------------------------
 	timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(refreshTableView) userInfo:nil repeats:YES];
 	[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];

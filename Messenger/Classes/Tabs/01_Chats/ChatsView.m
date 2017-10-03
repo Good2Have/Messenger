@@ -38,16 +38,16 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	{
-		[self.tabBarItem setImage:[UIImage imageNamed:@"tab_chats"]];
-		self.tabBarItem.title = @"Chats";
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CHATS];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_STATUSES];
-		[NotificationCenter addObserver:self selector:@selector(refreshTabCounter) name:NOTIFICATION_REFRESH_CHATS];
-		[NotificationCenter addObserver:self selector:@selector(refreshTabCounter) name:NOTIFICATION_REFRESH_STATUSES];
-	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[self.tabBarItem setImage:[UIImage imageNamed:@"tab_chats"]];
+	self.tabBarItem.title = @"Chats";
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_CHATS];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_STATUSES];
+	[NotificationCenter addObserver:self selector:@selector(refreshTabCounter) name:NOTIFICATION_REFRESH_CHATS];
+	[NotificationCenter addObserver:self selector:@selector(refreshTabCounter) name:NOTIFICATION_REFRESH_STATUSES];
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return self;
 }
 

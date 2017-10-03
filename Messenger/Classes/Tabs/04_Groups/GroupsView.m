@@ -36,15 +36,14 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-	if (self)
-	{
-		[self.tabBarItem setImage:[UIImage imageNamed:@"tab_groups"]];
-		self.tabBarItem.title = @"Groups";
-		//-----------------------------------------------------------------------------------------------------------------------------------------
-		[NotificationCenter addObserver:self selector:@selector(loadGroups) name:NOTIFICATION_USER_LOGGED_IN];
-		[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
-		[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_GROUPS];
-	}
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[self.tabBarItem setImage:[UIImage imageNamed:@"tab_groups"]];
+	self.tabBarItem.title = @"Groups";
+	//---------------------------------------------------------------------------------------------------------------------------------------------
+	[NotificationCenter addObserver:self selector:@selector(loadGroups) name:NOTIFICATION_USER_LOGGED_IN];
+	[NotificationCenter addObserver:self selector:@selector(actionCleanup) name:NOTIFICATION_USER_LOGGED_OUT];
+	[NotificationCenter addObserver:self selector:@selector(refreshTableView) name:NOTIFICATION_REFRESH_GROUPS];
+	//---------------------------------------------------------------------------------------------------------------------------------------------
 	return self;
 }
 
