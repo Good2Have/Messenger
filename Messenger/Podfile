@@ -10,7 +10,7 @@ target 'app' do
 	pod 'Firebase/Storage'
 	pod 'GoogleSignIn'
 	pod 'OneSignal', '2.5.0'
-	pod 'Realm'
+	pod 'Realm', '2.10.2'
 	pod 'SinchRTC'
 	pod 'SinchVerification'
 
@@ -19,7 +19,7 @@ target 'app' do
 	pod 'NYTPhotoViewer'
 	pod 'ProgressHUD'
 	pod 'RCAudioPlayer'
-	pod 'RCMessageKit', '1.1'
+	pod 'RCMessageKit'
 	pod 'Reachability'
 	pod 'RNCryptor-objc'
 end
